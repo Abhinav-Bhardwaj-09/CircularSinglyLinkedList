@@ -9,16 +9,13 @@ package node;
 
 public class Node {
     private int data;
-    private Node previousNode, nextNode;
-
+    private Node  nextNode;
 
 
     public Node(int data) {
         this.data = data;
-        this.previousNode = null;
         this.nextNode = null;
     }
-
 
 
     public int getData() {
@@ -27,14 +24,6 @@ public class Node {
 
     public void setData(int data) {
         this.data = data;
-    }
-
-    public Node getPreviousNode() {
-        return previousNode;
-    }
-
-    public void setPreviousNode(Node previousNode) {
-        this.previousNode = previousNode;
     }
 
     public Node getNextNode() {
