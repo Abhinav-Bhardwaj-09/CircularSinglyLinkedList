@@ -12,6 +12,15 @@ public class Node {
     private Node previousNode, nextNode;
 
 
+
+    public Node(int data) {
+        this.data = data;
+        this.previousNode = null;
+        this.nextNode = null;
+    }
+
+
+
     public int getData() {
         return data;
     }
