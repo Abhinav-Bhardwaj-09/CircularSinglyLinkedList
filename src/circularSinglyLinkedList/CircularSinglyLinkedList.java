@@ -10,12 +10,33 @@ import node.Node;
  */
 
 public class CircularSinglyLinkedList {
-    private Node head;
+    private Node start, last;
     private int length;
 
 
     // To get the Length of the LinkedList
     public int getLength() {
         return length;
+    }
+
+
+
+    // To insert new node in the LinkedList at the start
+    public void insertAtStart (int data) {
+        Node newNode = new Node(data);
+
+        length++;
+
+        if(start == null) {
+            start = newNode;
+            start.setNextNode(start);
+            last = start;
+            return;
+        }
+
+        Node temp = start;
+        start = newNode;
+        start.setNextNode(temp);
+        last.setNextNode(start);
     }
 }
