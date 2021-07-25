@@ -1,5 +1,7 @@
 package circularSinglyLinkedList;
 
+import node.Node;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Abhinav Bhardwaj
@@ -8,4 +10,12 @@ package circularSinglyLinkedList;
  */
 
 public class CircularSinglyLinkedList {
+    private Node head;
+    private int length;
+
+
+    // To get the Length of the LinkedList
+    public int getLength() {
+        return length;
+    }
 }
