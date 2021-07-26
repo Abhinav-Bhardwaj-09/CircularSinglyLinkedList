@@ -108,6 +108,37 @@ public class CircularSinglyLinkedList {
 
 
 
+    // To delete a node present at the given position
+    public void deletePresentAtGivenPosition (int position) {
+        if(start == null) {
+            System.out.println("Your Circular LinkedList is Already Empty !!!");
+            return;
+        }
+        else if(length < position) {
+            System.out.println("Position should be less than or equal to the length of the Circular LinkedList");
+            return;
+        }
+        else if(position == 1) {
+            deleteFromStart();
+            return;
+        }
+        else if(position == length) {
+            deletePresentAtLast();
+            return;
+        }
+
+        int count = 1;
+        Node currentNode = start;
+        while (count != position-1) {
+            currentNode = currentNode.getNextNode();
+            count++;
+        }
+        currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+        length--;
+    }
+
+
+
     // To display the elements of the LinkedList
     public void display() {
         if(start == null) {
