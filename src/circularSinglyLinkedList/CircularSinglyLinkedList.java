@@ -68,6 +68,12 @@ public class CircularSinglyLinkedList {
             System.out.println("Your Circular LinkedList is Already Empty !!!");
             return;
         }
+        else if(length == 1) {
+            start = null;
+            last = null;
+            length--;
+            return;
+        }
 
         start = start.getNextNode();
         last.setNextNode(start);
