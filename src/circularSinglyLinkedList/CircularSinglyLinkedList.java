@@ -139,6 +139,36 @@ public class CircularSinglyLinkedList {
 
 
 
+    // To display the element present at a particular position
+    public void displayElementPresentAtPosition (int position) {
+        if(start == null) {
+            System.out.println("Your Circular LinkedList is Already Empty !!!");
+            return;
+        }
+        else if(length < position) {
+            System.out.println("Position should be less than or equal to the length of the Circular LinkedList");
+            return;
+        }
+        else if(position == 1) {
+            System.out.println("Data present at the position 1 is  " + start.getData());
+            return;
+        }
+        else if(position == length) {
+            System.out.println("Data present at last of the linkedlist is  " + last.getData());
+            return;
+        }
+
+        int count = 1;
+        Node currentNode = start;
+        while (count != position) {
+            currentNode = currentNode.getNextNode();
+            count++;
+        }
+        System.out.println("Data present at position " + position + " in the linkedlist is  " + currentNode.getData());
+    }
+
+
+
     // To display the elements of the LinkedList
     public void display() {
         if(start == null) {
