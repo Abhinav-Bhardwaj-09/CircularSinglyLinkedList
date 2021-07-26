@@ -82,6 +82,32 @@ public class CircularSinglyLinkedList {
 
 
 
+    // To delete a node present before start
+    public void deletePresentAtLast() {
+        if(start == null) {
+            System.out.println("Your Circular LinkedList is Already Empty !!!");
+            return;
+        }
+        else if(length == 1) {
+            start = null;
+            last = null;
+            length--;
+            return;
+        }
+
+        length--;
+
+        int count = 1;
+        Node currentNode = start;
+        while (count != length-1) {
+            currentNode = currentNode.getNextNode();
+            count++;
+        }
+        currentNode.setNextNode(start);
+    }
+
+
+
     // To display the elements of the LinkedList
     public void display() {
         if(start == null) {
@@ -89,13 +115,13 @@ public class CircularSinglyLinkedList {
             return;
         }
 
-        Node current = start;
+        Node currentNode = start;
         int repetition = 0;
 
         while(repetition == 0) {
-            System.out.print(current.getData());
+            System.out.print(currentNode.getData());
 
-            if(current == last) {
+            if(currentNode == last) {
                 System.out.print(" --> Start");
                 repetition++;
                 return;
@@ -103,7 +129,7 @@ public class CircularSinglyLinkedList {
             else {
                 System.out.print(" --> ");
             }
-            current = current.getNextNode();
+            currentNode = currentNode.getNextNode();
         }
     }
 }
