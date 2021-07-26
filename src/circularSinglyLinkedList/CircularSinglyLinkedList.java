@@ -62,6 +62,21 @@ public class CircularSinglyLinkedList {
 
 
 
+    // To delete a node present at the position start
+    public void deleteFromStart () {
+        if(start == null) {
+            System.out.println("Your Circular LinkedList is Already Empty !!!");
+            return;
+        }
+
+        start = start.getNextNode();
+        last.setNextNode(start);
+        length--;
+    }
+
+
+
+    // To display the elements of the LinkedList
     public void display() {
         if(start == null) {
             System.out.println("Your Circular LinkedList is Empty !!!");
