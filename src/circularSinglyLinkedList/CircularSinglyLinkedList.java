@@ -39,4 +39,24 @@ public class CircularSinglyLinkedList {
         start.setNextNode(temp);
         last.setNextNode(start);
     }
+
+
+
+    // To insert new node before start or say after last
+    public void insertAtLast(int data) {
+        Node newNode = new Node(data);
+
+        length++;
+
+        if(start == null) {
+            start = newNode;
+            start.setNextNode(start);
+            last = start;
+            return;
+        }
+
+        last.setNextNode(newNode);
+        newNode.setNextNode(start);
+        last = newNode;
+    }
 }
