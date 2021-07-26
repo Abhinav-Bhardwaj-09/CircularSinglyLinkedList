@@ -59,4 +59,30 @@ public class CircularSinglyLinkedList {
         newNode.setNextNode(start);
         last = newNode;
     }
+
+
+
+    public void display() {
+        if(start == null) {
+            System.out.println("Your Circular LinkedList is Empty !!!");
+            return;
+        }
+
+        Node current = start;
+        int repetition = 0;
+
+        while(repetition == 0) {
+            System.out.print(current.getData());
+
+            if(current == last) {
+                System.out.print(" --> Start");
+                repetition++;
+                return;
+            }
+            else {
+                System.out.print(" --> ");
+            }
+            current = current.getNextNode();
+        }
+    }
 }
